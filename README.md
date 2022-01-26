@@ -1,6 +1,6 @@
 # coindirect-api-integration
 
-Integrating with API https://coindirect.docs.stoplight.io/geo/geo-api/countries/listcountries to,
+Integrating with API https://coindirect.docs.stoplight.io/geo/geo-api/countries/listcountries to get,
 - A list of all countries
     - With the following attributes:
         - Name
