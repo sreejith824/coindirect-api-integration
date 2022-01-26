@@ -1,0 +1,16 @@
+{
+  "name": "coindirect-integration",
+  "version": "1.0.0",
+  "description": "integration with coindirect APIs ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "express": "^4.17.2",
+    "swagger-ui-express": "^4.3.0"
+  }
+}
