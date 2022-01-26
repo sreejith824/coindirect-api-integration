@@ -4,7 +4,7 @@
   "description": "integration with coindirect APIs ",
   "main": "index.js",
   "scripts": {
-    "start": "set PORT=3000 && set URL=https://api.coindirect.com && node index.js",
+    "start": "set PORT=3000 && node index.js",
     "test": "jest",
     "test-w": "jest --watchAll"
   },
