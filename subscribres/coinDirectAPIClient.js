@@ -1,8 +1,10 @@
 const axios = require("axios");
 
+const URL = process.env.URL || "https://api.coindirect.com";
+
 async function getCountries(offset, maxresult) {
   try {
-    const response = await axios.get("https://api.coindirect.com/api/country", {
+    const response = await axios.get(URL + "/api/country", {
       params: { offset: offset, max: maxresult, enabled: true },
     });
     let responseObject = {
