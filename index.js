@@ -4,6 +4,7 @@ const swaggerUi = require("swagger-ui-express"),
 
 const coutriesRoutes = require("./routes/coutriesRoutes");
 const currenciesRoutes = require("./routes/currenciesRoutes");
+const logger = require("./util/logger")
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,7 +14,7 @@ app.use("/currencies", currenciesRoutes);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(port, () => {
-  console.log(`Application listening on port ${port}`);
+  logger.log("info", "Application listening on port %s", port);
 });
 
 module.exports = app;

@@ -1,5 +1,6 @@
 const coinDirectAPIClient = require("../subscribres/coinDirectAPIClient");
 const Country = require("../models/country");
+const logger = require("../util/logger")
 
 async function getCountries(queryParam) {
   try {
@@ -20,13 +21,15 @@ async function getCountries(queryParam) {
     let countries = addCountriesOnQueryParams(responseObject.data);
     //TODO: invoke coinDirectAPIClient.getCountries() and addCountriesOnQueryParams(responseObject.data, countries) in a loop to support pagination;
     sortCountries(countries, queryParam);
+    logger.log("info", "getCountries response", countries);
     return {
       "countries" : countries,
       "lastIndex": (responseObject.startIndex ? parseInt(responseObject.startIndex) : 0) + (queryParam.maxresult ? parseInt(queryParam.maxresult) : parseInt(responseObject.totalCount)),
       "totalCount" : responseObject.totalCount
     }  
   } catch (error) {
-    console.error(error);
+    logger.log("error", "error", error);
+    throw new Error("Error in getting countries.")
   }
 
   function sortCountries(countries, queryParam) {

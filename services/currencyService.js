@@ -1,4 +1,5 @@
 const coinDirectAPIClient = require("../subscribres/coinDirectAPIClient");
+const logger = require("../util/logger")
 
 async function getCurrencies(queryParam) {
   try {
@@ -23,7 +24,8 @@ async function getCurrencies(queryParam) {
     }
     return currencies;
   } catch (error) {
-    console.error(error);
+    logger.log("error", "error", error);
+    throw new Error("Error in getting countries.")
   }
 }
 

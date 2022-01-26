@@ -1,6 +1,7 @@
 const express = require("express");
 
 const countryService = require("../services/countryService");
+const logger = require("../util/logger")
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -11,7 +12,7 @@ router.get("/", async (req, res) => {
   queryParam.sortOrderOnCurrency = req.query.sortOrderOnCurrency;
   queryParam.offset = req.query.offset;
   queryParam.maxresult = req.query.maxresult;
-  console.log(queryParam);
+  logger.log("info", "queryParam", queryParam);
   res.send(await countryService.getCountries(queryParam));
 });
 

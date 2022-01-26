@@ -1,4 +1,5 @@
 const axios = require("axios");
+const logger = require("../util/logger")
 
 const URL = process.env.URL || "https://api.coindirect.com";
 
@@ -14,7 +15,8 @@ async function getCountries(offset, maxresult) {
     };
     return responseObject;
   } catch (error) {
-    console.error(error);
+    logger.log("error", "error", error);
+    throw new Error("Error in Accessing API.")
   }
 }
 
