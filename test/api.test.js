@@ -26,6 +26,13 @@ test("GET /countries?name=Norway", async () => {
 test("GET /countries?currency=NOK", async () => {
   await supertest(app).get("/countries?currency=NOK")
     .expect(200).then((response) => {
-      expect(response.body.countries[0].name).toEqual("Sweden");
+      expect(response.body.countries[0].name).not.toEqual("Sweden");
+    });
+});
+
+test("GET /countries?currency=ABC", async () => {
+  await supertest(app).get("/countries?currency=ABC")
+    .expect(200).then((response) => {
+      expect(response.body.countries).toHaveLength(0);
     });
 });
