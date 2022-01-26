@@ -28,6 +28,6 @@ Successfull completion of above steps will start node server. Node server expose
 # Run as docker container
 ```shell
 $docker build . -t <container registry>/coindirect-integration:v1
-$docker run -p 3000:3000 -d -v $(pwd)/logs:/usr/src/app/logs sreejith824/coindirect-integration:v1
+$docker run -p 3000:3000 -d -v $(pwd)/logs:/usr/src/app/logs <container registry>/coindirect-integration:v1
 ````
 Swagger documentation will be available at http://localhost:3000/api-docs/
