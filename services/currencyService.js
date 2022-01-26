@@ -22,6 +22,7 @@ async function getCurrencies(queryParam) {
         }
       });
     }
+    logger.log("info", "getCurrencies response", currencies);
     return currencies;
   } catch (error) {
     logger.log("error", "error", error);
