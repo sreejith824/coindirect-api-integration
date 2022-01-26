@@ -10,13 +10,11 @@ async function getCountries(queryParam) {
         queryParam.maxresult
       );
     } else if (queryParam.maxresult == null) {
-      console.log("max result is null")
       responseObject = await coinDirectAPIClient.getCountries(queryParam.offset,1);
       responseObject = await coinDirectAPIClient.getCountries(
         queryParam.offset,
         responseObject.totalCount
       );
-      console.log(responseObject)
     }
 
     let countries = addCountriesOnQueryParams(responseObject.data);

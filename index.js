@@ -27,5 +27,5 @@ app.get("/currencies", async (req, res) => {
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Application listening on port ${port}`);
 });
